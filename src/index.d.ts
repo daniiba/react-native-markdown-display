@@ -1,8 +1,8 @@
 // tslint:disable:max-classes-per-file
 import MarkdownIt from 'markdown-it';
 import Token from 'markdown-it/lib/token';
-import {ComponentType, ReactNode} from 'react';
-import {StyleSheet, View} from 'react-native';
+import { ComponentType, ReactNode } from 'react';
+import { StyleSheet, View } from 'react-native';
 
 export function getUniqueID(): string;
 export function openUrl(url: string): void;
@@ -83,6 +83,7 @@ export function tokensToAST(tokens: ReadonlyArray<Token>): ASTNode[];
 
 export interface MarkdownProps {
   rules?: RenderRules;
+  children?: ReactNode;
   style?: StyleSheet.NamedStyles<any>;
   renderer?: AstRenderer;
   markdownit?: MarkdownIt;
@@ -94,5 +95,5 @@ export interface MarkdownProps {
 type MarkdownStatic = ComponentType<MarkdownProps>;
 export const Markdown: MarkdownStatic;
 export type Markdown = MarkdownStatic;
-export {MarkdownIt};
+export { MarkdownIt };
 export default Markdown;
